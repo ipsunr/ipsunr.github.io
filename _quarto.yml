@@ -1,0 +1,62 @@
+project:
+  type: website
+
+website:
+  title: "Física IPS-UNR"
+  description: "Página del Departamento de Física del Instituto Politécnico Superior (IPS-UNR)."
+  site-url: "https://ipsunr.github.io/fisica/"
+  #favicon: utils/imgs/favicon.png
+  page-navigation: true
+  navbar:
+    left:
+      # - href: index.qmd
+      #   text: Home
+      - text: Dpto. Física
+        menu:
+          # - text: "Historia"
+          #   href: about/historia.qmd
+          - text: "Docentes"
+            href: about/docentes.qmd
+          - text: "Investigación"
+            href: about/research.qmd
+      - text: Secundario
+        menu:
+          - text: "Horarios de cursado"
+            href: secundario/horarios.qmd
+          - text: "Apuntes"
+            href: secundario/apuntes.qmd
+          - text: "Mesas de exámenes"
+            href: secundario/mesas.qmd
+          - text: "Horarios de consultas"
+            href: secundario/consultas.qmd
+          - text: "Material complementario"
+            href: secundario/otros.qmd
+          # - text: "Analíticos"
+          #   href: secundario/analíticos.qmd
+          #   https://www.ips.edu.ar/programas-analiticos-nivel-secundario
+      - text: Terciario
+        menu:
+          # - text: "Horarios de cursado"
+          #   href: terciario/horarios.qmd
+          - text: "Apuntes"
+            href: terciario/apuntes.qmd
+          # - text: "Mesas de exámenes"
+          #   href: terciario/mesas.qmd
+      # - about.qmd
+
+bibliography: papers.bib
+csl: chicago-author-date.csl
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - styles.scss
+    # theme: cosmo
+    # css: styles.css
+    toc: false
+    # toc: true
+    lang: es
+    format-links: false
+
+

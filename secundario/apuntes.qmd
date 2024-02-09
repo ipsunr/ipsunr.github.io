@@ -1,0 +1,40 @@
+---
+title: "Apuntes"
+---
+
+Todos los apuntes están alojados en el [Repositorio Hipermedial de la UNR](https://rephip.unr.edu.ar/communities/7e40c71c-75f6-4e51-8ca8-543edc084033){target="_blank"}
+
+## 1er Año
+
+* [Estructura de la materia y Fenómenos Térmicos](http://hdl.handle.net/2133/14167){target="_blank"}
+* [Modelo atómico de absorción y emisón de fotones](http://hdl.handle.net/2133/15803){target="_blank"}
+
+## 2do Año
+
+* [Mediciones](http://hdl.handle.net/2133/14171){target="_blank"}
+* [Ondas](http://hdl.handle.net/2133/15937){target="_blank"}
+
+## 3ro Año
+
+* [Movimiento en una dimensión](http://hdl.handle.net/2133/14178){target="_blank"}
+* [Fuerza y Movimiento](http://hdl.handle.net/2133/14799){target="_blank"}
+* [Aplicaciones de las leyes de Newton](http://hdl.handle.net/2133/15626){target="_blank"}
+* [Movimiento Circular](http://hdl.handle.net/2133/15802){target="_blank"}
+* [Trabajo y Energía](http://hdl.handle.net/2133/16147){target="_blank"}
+
+## 4to Año
+
+* [Mecánica de fluidos](http://hdl.handle.net/2133/23179){target="_blank"} <!-- Hidrostática e Hidrodinámica http://hdl.handle.net/2133/14233 -->
+* [Temperatura y dilatación](http://hdl.handle.net/2133/23476){target="_blank"}
+* [Primer Principio de la Termodinámica](http://hdl.handle.net/2133/14800){target="_blank"}
+* [Gases Ideales y Sustancias Reales](http://hdl.handle.net/2133/24198){target="_blank"} <!--  [Comportamiento de los gases](http://hdl.handle.net/2133/15556){target="_blank"} -->
+* [Electrostática](http://hdl.handle.net/2133/15623){target="_blank"}
+* [Circuitos de Corriente Continua](http://hdl.handle.net/2133/15558){target="_blank"}
+
+## 5to Año
+
+* [Oscilaciones Mecánicas](http://hdl.handle.net/2133/14291){target="_blank"}
+* [Ondas mecánicas](http://hdl.handle.net/2133/14591){target="_blank"}
+* [Fenómenos de Ondas](http://hdl.handle.net/2133/14592){target="_blank"}
+* [Ondas Electromagnéticas](http://hdl.handle.net/2133/15942){target="_blank"}
+

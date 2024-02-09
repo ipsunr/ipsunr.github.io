@@ -1,0 +1,107 @@
+---
+title: "Horarios de consultas"
+---
+
+```{python}
+#| echo: false
+#| include: false
+import pandas as pd
+def get_url(spreadsheet_id,sheet_id=None):
+    if sheet_id is None:
+        return "https://docs.google.com/spreadsheets/d/"+spreadsheet_id+"/export?format=csv"
+    else:
+        return "https://docs.google.com/spreadsheets/d/"+spreadsheet_id+"/export?format=csv&gid="+sheet_id
+def get_consultas(url):
+    raw=pd.read_csv(url,header=None).values
+    starttable=False
+    consultas_rows=[]
+    for i in range(len(raw)):
+        # print(raw[i],len(raw[i]))
+        if starttable:
+            if pd.isnull(raw[i,0]):
+                starttable=False
+                consultas_rows[-1][1]=i-1
+
+        if not isinstance(raw[i,0],str):
+            continue
+        if "física" in raw[i,0].lower() or "fisica" in raw[i,0].lower():
+            curso=raw[i,0]
+        if "examen" in raw[i,0].lower() or "fisica" in raw[i,0].lower():
+            fechaExamen=raw[i,0].split()[-2:]
+            fechaExamen=" ".join(fechaExamen)
+            
+        if raw[i,0]=="Docente":
+            starttable=True
+            consultas_rows.append([i,None])
+            # if starttable:
+            #     starttable=False
+            #     consultas_rows[-1][1]=i-2
+            # else:
+            #     starttable=True
+            #     consultas_rows.append([i,None])
+    if starttable: # means last table was not restricted
+        consultas_rows[-1][1]=len(raw)-2
+    # print(consultas_rows)
+    res_df=[]
+    for i in range(len(consultas_rows)):
+        nrows=consultas_rows[i][1]-consultas_rows[i][0]
+        skiprows=consultas_rows[i][0]
+        aux=pd.read_csv(url,nrows=nrows,skiprows=skiprows)
+        dict_col={col:col.strip() for col in aux.columns}
+        aux=aux.rename(columns=dict_col)
+        res_df.append(aux)
+    df=pd.concat(res_df,ignore_index=True)
+
+    # return [df,res_df], curso, fechaExamen
+    return df, curso.strip(), fechaExamen
+
+def convert_col_to_date(df,colname,new_colname="Fecha",add_year=None):
+    if not add_year is None:
+        print("Warning: Add year not yet implemented")
+    daymonth=[el.strip().split()[-1] for el in df[colname].values]
+    day=[int(el.split("/")[0]) for el in daymonth]
+    month=[int(el.split("/")[1]) for el in daymonth]
+    df.insert(len(df.columns),new_colname,daymonth,True)
+    df['fecha']=pd.to_datetime(df[new_colname], format='%d/%m')
+    return df
+
+def quarto_print_table(df,cols=["Día","Horario","Docente"]):
+    # https://quarto.org/docs/authoring/tables.html
+    header="|"+"|".join(cols)+"|\n"
+    # |--------|--------|
+    res=""
+    for ind in df.index:
+        # print([df2add[key][ind] for key in df2add.columns.to_list()])
+        # lst_seg=time2listseg(df2add['Inicio'][ind],df2add['Fin'][ind],seg_dict)
+        # for seg in lst_seg:
+        #     df.loc[len(df.index)] = [df2add['Día de la Semana'][ind],
+        #                              df2add['Curso'][ind],
+        #                              df2add['Sede'][ind],
+        #                              name,
+        #                              seg]
+        res+="|"+"|".join( ["%s"%(df[key][ind]) for key in cols] )+"|\n"
+        # Here I could get the lenght of each column to do a more "clever" table
+    header+="|"+"|".join(["--------" for key in cols])+"|\n"
+    return header+res
+
+```
+
+```{python}
+#| echo: false
+#| include: true
+#| output: asis
+
+id_spreadsheet="1hzk9-V7GxA1zexxdyIwBunavCc2EKIIy"
+id_sheet=["1577060890","2021169522","11134517","863981205"]#,"665250288"]
+
+for idsh in id_sheet:
+    df,curso,fecha=get_consultas(get_url(id_spreadsheet,idsh))
+    df=convert_col_to_date(df,'Día','Fecha')
+    df.sort_values("Fecha",ascending=True)
+    print("# %s"%curso)
+    print("\n**Fecha de examen** %s\n"%fecha)
+    #print(df)
+    print(quarto_print_table(df,cols=["Día","Horario","Docente"]))
+    print("")
+
+```

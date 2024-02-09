@@ -1,0 +1,28 @@
+---
+title: "Investigación"
+filters:
+  - section-bibliographies
+citeproc: false
+---
+<!--
+https://quarto.org/docs/authoring/footnotes-and-citations.html
+
+-->
+# Investigación secundaria
+
+
+<div style="visibility: hidden; height: 0;">
+
+  @Cadierno_Evangelista_2019
+  @Ondas2do_2015
+
+</div>
+
+# Investigación universitaria
+
+<div style="visibility: hidden; height: 0;">
+
+  @Silva_Hamad_2022
+  @LabRemoto_2017
+
+</div>

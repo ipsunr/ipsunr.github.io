@@ -1,0 +1,11 @@
+---
+title: "Apuntes"
+---
+
+Todos los apuntes están alojados en el [Repositorio Hipermedial de la UNR](https://rephip.unr.edu.ar/communities/7e40c71c-75f6-4e51-8ca8-543edc084033){target="_blank"}
+
+## Terciario
+
+* [FISICA - Ingreso Terciarios 2016](http://hdl.handle.net/2133/4907){target="_blank"}
+* [7001 - T U OPTICA - Mediciones](http://hdl.handle.net/2133/15003){target="_blank"}
+* [7002 TUOC Óptica Geométrica (parte I)](http://hdl.handle.net/2133/17750){target="_blank"}
